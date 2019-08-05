@@ -62,7 +62,11 @@
                     <el-input v-model="editForm.logo" auto-complete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="类型" prop="productTypeId">
-                    <el-input v-model="editForm.productTypeId" auto-complete="off"></el-input>
+                    <el-cascader
+                            :options="productTypes"
+                            :props="props"
+                            v-model="editForm.productTypeId">
+                    </el-cascader>
                 </el-form-item>
                 <el-form-item label="描述">
                     <el-input type="textarea" v-model="editForm.description"></el-input>
@@ -196,7 +200,6 @@
             //上传文件成功的回调
             handleSucces(response, file, fileList){
                 this.addForm.logo = response.obj;
-                console.debug("fileList",fileList);
                 this.logoList = fileList;
             },
 

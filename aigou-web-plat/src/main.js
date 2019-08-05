@@ -16,6 +16,15 @@ import routes from './routes'
 import 'font-awesome/css/font-awesome.min.css'
 
 import axios from 'axios'
+
+
+import VueQuillEditor  from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor);
+
 axios.defaults.baseURL = 'http://localhost:4000/service'  //基本的url,项目中使用axios发送的所有请求都会把它作为请求的前缀
 // 将API方法绑定到全局  /plat/login
 Vue.prototype.$http = axios  //js对象的原型
